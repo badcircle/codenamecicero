@@ -17,7 +17,7 @@ var ani_current_speed : float = ani_current_speed_cap[current_speed_selected]
 @export_node_path(Resource) var ca
 
 var input_dir
-var going_backward = 0
+var target_dir = 180
 
 func _ready():
 	ani = get_node("AnimationTree")
@@ -73,14 +73,31 @@ func _set_move_speed(delta):
 		ani["parameters/walk/blend_amount"] = move_toward(ani["parameters/walk/blend_amount"], 0, delta * 3)
 
 func _turn_player(delta):
-	if input_dir.y <= 0:
-		going_backward = 180
-	else:
-		going_backward = 0
-	ca.rotation.y = lerp_angle(ca.rotation.y, deg2rad(going_backward), delta * 3)
-	if abs(input_dir.x) > 0:
-		if abs(input_dir.x) < 0:
-			ca.rotation.y = lerp_angle(ca.rotation.y, deg2rad(going_backward - input_dir.x * 45), delta * 3)
+	if input_dir.y < 0:
+		target_dir = 180
+	if input_dir.y > 0:
+		target_dir = 0
+	if input_dir.x > 0:
+		if target_dir == 180:
+			if input_dir.x < 1:
+				ca.rotation.y = lerp_angle(ca.rotation.y, deg2rad(target_dir - 45), delta * 3)
+			else:
+				ca.rotation.y = lerp_angle(ca.rotation.y, deg2rad(target_dir - 90), delta * 3)
 		else:
-			ca.rotation.y = lerp_angle(ca.rotation.y, deg2rad(going_backward - input_dir.x * 90), delta * 3)
-
+			if input_dir.x < 1:
+				ca.rotation.y = lerp_angle(ca.rotation.y, deg2rad(target_dir + 45), delta * 3)
+			else:
+				ca.rotation.y = lerp_angle(ca.rotation.y, deg2rad(target_dir + 90), delta * 3)
+	if input_dir.x < 0:
+		if target_dir == 180:
+			if abs(input_dir.x) < 1:
+				ca.rotation.y = lerp_angle(ca.rotation.y, deg2rad(target_dir + 45), delta * 3)
+			else:
+				ca.rotation.y = lerp_angle(ca.rotation.y, deg2rad(target_dir + 90), delta * 3)
+		else:
+			if abs(input_dir.x) < 1:
+				ca.rotation.y = lerp_angle(ca.rotation.y, deg2rad(target_dir - 45), delta * 3)
+			else:
+				ca.rotation.y = lerp_angle(ca.rotation.y, deg2rad(target_dir - 90), delta * 3)
+	if input_dir.x == 0 and input_dir.y != 0:
+		ca.rotation.y = lerp_angle(ca.rotation.y, deg2rad(target_dir), delta * 3)

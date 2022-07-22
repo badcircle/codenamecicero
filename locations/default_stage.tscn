@@ -27,19 +27,21 @@ shape = SubResource("ConvexPolygonShape3D_fdb7j")
 [node name="Player" parent="." instance=ExtResource("1_7ilx5")]
 
 [node name="Skeleton3D" parent="Player/CharacterArmature" index="0"]
-bones/2/position = Vector3(0.0034307, 0.966032, 0.0972465)
-bones/2/rotation = Quaternion(-0.000503476, 0.00264769, 2.41586e-05, 0.999996)
-bones/6/rotation = Quaternion(-0.0323621, 2.39025e-05, 0.000137812, 0.999476)
-bones/8/position = Vector3(0.132971, 0.140857, 0.0135193)
-bones/11/rotation = Quaternion(0.0114027, 0.153341, -0.0095167, 0.988062)
-bones/12/position = Vector3(-0.143533, 0.140026, 0.0136169)
-bones/16/rotation = Quaternion(0.991473, 0.00930034, 0.00200937, 0.129969)
-bones/17/rotation = Quaternion(0.316956, 0.00340806, 0.00922036, 0.948389)
-bones/18/rotation = Quaternion(0.991696, -0.0112758, 0.00387743, 0.128052)
-bones/19/rotation = Quaternion(0.316211, -0.00340076, -0.00922305, 0.948638)
+bones/2/position = Vector3(0.00231729, 0.998298, 0.026538)
+bones/2/rotation = Quaternion(-0.000108875, 0.000570282, 5.22421e-06, 1)
+bones/6/rotation = Quaternion(-0.0467853, 1.25929e-05, 6.06681e-05, 0.998905)
+bones/8/position = Vector3(0.138337, 0.14048, 0.0135676)
+bones/10/rotation = Quaternion(-0.0380439, 0.224584, -0.127958, 0.965268)
+bones/11/rotation = Quaternion(0.0122992, 0.0490685, -0.00723236, 0.998694)
+bones/12/position = Vector3(-0.139141, 0.140332, 0.0134637)
+bones/15/rotation = Quaternion(0.0113776, -0.15604, 0.00957493, 0.987639)
+bones/16/rotation = Quaternion(0.993369, 0.0101645, -0.000593355, 0.114515)
+bones/17/rotation = Quaternion(0.22232, 0.00248641, 0.0095104, 0.974924)
+bones/18/rotation = Quaternion(0.993475, -0.0106492, 0.00196111, 0.113535)
+bones/19/rotation = Quaternion(0.222145, -0.00248466, -0.00951085, 0.974964)
 
 [node name="Position3D" parent="Player/CharacterArmature/Skeleton3D" index="0"]
-transform = Transform3D(0.999986, 0.000129813, 0.00529314, 4.56311e-05, 0.999451, -0.033132, -0.00529454, 0.0331317, 0.999437, 0.000273526, 1.50773, 0.0327484)
+transform = Transform3D(0.999999, 2.83625e-05, 0.00113941, 1.03036e-05, 0.999425, -0.0339208, -0.00113972, 0.0339208, 0.999424, -0.000552689, 1.54005, -0.0375377)
 
 [node name="WorldEnvironment" type="WorldEnvironment" parent="."]
 environment = ExtResource("2_8s4r8")
