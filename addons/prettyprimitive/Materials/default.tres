@@ -1,0 +1,19 @@
+[gd_resource type="ShaderMaterial" load_steps=2 format=3 uid="uid://ci8ettuo3wpr8"]
+
+[ext_resource type="Shader" path="res://addons/prettyprimitive/Materials/triplanar_grid.gdshader" id="1_1u57s"]
+
+[resource]
+render_priority = 0
+shader = ExtResource( "1_1u57s" )
+shader_param/line_color = Color(0.733333, 0.133333, 0.835294, 1)
+shader_param/line_thickness = 0.043
+shader_param/albedo = Color(0.690196, 0.690196, 0.690196, 1)
+shader_param/roughness = 1.0
+shader_param/metallic_texture_channel = Plane(1, 0, 0, 0)
+shader_param/specular = 0.5
+shader_param/metallic = 0.0
+shader_param/uv1_blend_sharpness = 14.0
+shader_param/uv1_scale = Vector3(1, 1, 1)
+shader_param/uv1_offset = Vector3(0, 0, 0)
+shader_param/uv2_scale = Vector3(1, 1, 1)
+shader_param/uv2_offset = Vector3(0, 0, 0)
